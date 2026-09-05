@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>胡翌辉 Portfolio</title>
+    <style>
+      #preload-fallback {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: grid;
+        place-items: center;
+        align-content: center;
+        gap: 24px;
+        overflow: hidden;
+        background:
+          repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 6px),
+          linear-gradient(135deg, #030405, #080b0f 54%, #030405);
+      }
+
+      #preload-fallback::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        content: none;
+      }
+
+      #preload-fallback .console {
+        position: relative;
+        width: 220px;
+        height: 220px;
+        display: grid;
+        place-items: center;
+      }
+
+      #preload-fallback .rings,
+      #preload-fallback .rings::before,
+      #preload-fallback .rings::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      #preload-fallback .rings {
+        inset: 10px;
+        border-color: rgba(218, 187, 93, 0.32);
+        box-shadow: none;
+        animation: fallback-ring-on 2.8s cubic-bezier(0.2, 0.75, 0.18, 1) both;
+      }
+
+      #preload-fallback .rings::before {
+        inset: 24px;
+        border-top-color: rgba(255, 255, 255, 0.72);
+        animation: fallback-ring-spin 1.8s linear infinite;
+      }
+
+      #preload-fallback .rings::after {
+        inset: 54px;
+        border-left-color: rgba(218, 187, 93, 0.7);
+        animation: fallback-ring-spin 2.4s linear infinite reverse;
+      }
+
+      #preload-fallback .mark {
+        position: relative;
+        z-index: 2;
+        width: 118px;
+        height: 148px;
+        overflow: hidden;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(218, 187, 93, 0.84) 54%, rgba(255, 255, 255, 0.92));
+        mask: url("/assets/logo-mark-white.png") center / contain no-repeat;
+        -webkit-mask: url("/assets/logo-mark-white.png") center / contain no-repeat;
+        opacity: 0;
+        filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.28)) drop-shadow(0 0 28px rgba(218, 187, 93, 0.2));
+        animation: fallback-logo-on 2.8s cubic-bezier(0.2, 0.75, 0.18, 1) both;
+      }
+
+      #preload-fallback .mark::before {
+        content: "";
+        position: absolute;
+        inset: -18%;
+        background: linear-gradient(105deg, transparent 18%, rgba(255, 255, 255, 0.92) 47%, transparent 66%);
+        transform: translateX(-130%);
+        animation: fallback-glint 2.8s ease both;
+      }
+
+      #preload-fallback .scan {
+        position: absolute;
+        z-index: 3;
+        left: 26px;
+        right: 26px;
+        height: 2px;
+        top: 28px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.96), rgba(218, 187, 93, 0.78), transparent);
+        box-shadow: 0 0 16px rgba(255, 255, 255, 0.52), 0 0 28px rgba(218, 187, 93, 0.32);
+        animation: fallback-scan 2.8s cubic-bezier(0.2, 0.75, 0.18, 1) both;
+      }
+
+      #preload-fallback p {
+        position: relative;
+        z-index: 2;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.9);
+        font: 700 24px/1 Didot, "Bodoni 72", "Times New Roman", serif;
+        letter-spacing: 0.16em;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.18), 0 0 22px rgba(218, 187, 93, 0.14);
+        animation: fallback-text-on 2.8s steps(1, end) both;
+      }
+
+      @keyframes fallback-boot-wipe { 0% { transform: translateX(-120%); opacity: 0; } 18% { opacity: 1; } 58% { transform: translateX(0%); opacity: 0.46; } 100% { transform: translateX(120%); opacity: 0; } }
+      @keyframes fallback-ring-on { 0% { opacity: 0; transform: scale(0.72) rotate(-48deg); } 35% { opacity: 1; transform: scale(1) rotate(0deg); } 100% { opacity: 0.72; transform: scale(1.04) rotate(18deg); } }
+      @keyframes fallback-ring-spin { to { transform: rotate(360deg); } }
+      @keyframes fallback-logo-on { 0%, 18% { opacity: 0; transform: scale(0.86); } 28% { opacity: 0.42; transform: scale(1.08); } 36%, 42% { opacity: 0.12; } 46%, 100% { opacity: 1; transform: scale(1); } }
+      @keyframes fallback-glint { 0%, 38% { transform: translateX(-130%); opacity: 0; } 52% { opacity: 1; } 78%, 100% { transform: translateX(130%); opacity: 0; } }
+      @keyframes fallback-scan { 0% { opacity: 0; transform: translateY(0); } 16% { opacity: 1; } 62% { opacity: 1; transform: translateY(164px); } 100% { opacity: 0; transform: translateY(164px); } }
+      @keyframes fallback-text-on { 0%, 20% { opacity: 0; transform: translateY(8px); } 30% { opacity: 0.36; } 32% { opacity: 0; } 38% { opacity: 0.72; } 42%, 100% { opacity: 1; transform: translateY(0); } }
+    </style>
+  </head>
+  <body>
+    <div id="preload-fallback">
+      <div class="console">
+        <div class="rings"></div>
+        <div class="mark"></div>
+        <div class="scan"></div>
+      </div>
+      <p>ROYK</p>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

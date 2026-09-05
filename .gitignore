@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.log
+vite-dev*.log
+hero-robot-new.mp4
+work/
+.env
+.env.*
