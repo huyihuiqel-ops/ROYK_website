@@ -469,6 +469,10 @@ function App() {
       </section>
 
       <section className="about pageSection" id="about">
+        <video className="aboutVideo" autoPlay muted loop playsInline>
+          <source src="/assets/about-bg.mp4" type="video/mp4" />
+        </video>
+        <div className="aboutShade" />
         <div className="workHeader reveal revealDown">
           <h2>WORK EXPERIENCE</h2>
           <p>个人简介 / Personal Profile</p>

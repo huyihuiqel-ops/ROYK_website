@@ -652,6 +652,8 @@ img {
   position: relative;
   margin-top: -90px;
   padding-top: 210px;
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .about::before {
@@ -666,6 +668,31 @@ img {
   background:
     linear-gradient(180deg, #030405 0%, rgba(3, 4, 5, 0.96) 36%, rgba(3, 4, 5, 0) 100%),
     radial-gradient(ellipse at 22% 8%, rgba(218, 187, 93, 0.08), transparent 42%);
+}
+
+.aboutVideo,
+.aboutShade {
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.aboutVideo {
+  z-index: -3;
+  object-fit: cover;
+  opacity: 1;
+  filter: brightness(0.9);
+}
+
+.aboutShade {
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(3, 4, 5, 0.84), rgba(3, 4, 5, 0.54) 48%, rgba(3, 4, 5, 0.78)),
+    linear-gradient(180deg, rgba(3, 4, 5, 0.96) 0%, rgba(3, 4, 5, 0.36) 38%, rgba(3, 4, 5, 0.9) 100%);
 }
 
 .sectionHead {
