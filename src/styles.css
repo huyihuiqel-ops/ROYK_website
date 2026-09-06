@@ -1797,8 +1797,8 @@ img {
 .contactShade {
   z-index: -2;
   background:
-    linear-gradient(90deg, rgba(3, 4, 5, 0.92), rgba(3, 4, 5, 0.66) 48%, rgba(3, 4, 5, 0.78)),
-    linear-gradient(0deg, #030405 0%, rgba(3, 4, 5, 0.22) 34%, #030405 100%);
+    linear-gradient(90deg, rgba(3, 4, 5, 0.72), rgba(3, 4, 5, 0.46) 48%, rgba(3, 4, 5, 0.58)),
+    linear-gradient(0deg, rgba(3, 4, 5, 0.8) 0%, rgba(3, 4, 5, 0.02) 34%, rgba(3, 4, 5, 0.8) 100%);
 }
 
 .contactClose > .reveal {
