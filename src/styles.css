@@ -1790,8 +1790,8 @@ img {
 .contactVideo {
   z-index: -3;
   object-fit: cover;
-  opacity: 0.42;
-  filter: contrast(1.08) saturate(0.9) brightness(0.46);
+  opacity: 0.78;
+  filter: contrast(1.1) saturate(0.92) brightness(0.62);
 }
 
 .contactShade {
