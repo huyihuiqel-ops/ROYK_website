@@ -575,6 +575,10 @@ function App() {
       </section>
 
       <section className="contactClose" id="contact">
+        <video className="contactVideo" autoPlay muted loop playsInline>
+          <source src="/assets/contact-bg.mp4" type="video/mp4" />
+        </video>
+        <div className="contactShade" />
         <div className="reveal revealUp">
           <p className="eyebrow">Available for design collaboration</p>
           <h2>
