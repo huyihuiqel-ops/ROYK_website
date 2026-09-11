@@ -52,20 +52,6 @@ const aigcProjectFrames = [
     featured: true,
     href: '#vfx-copilot',
   },
-  {
-    id: 'ai-workflow-study',
-    zh: '页小灵',
-    en: 'AI PPT Generator',
-    type: 'AI Product / Workflow Design',
-    status: 'AI Presentation Workflow',
-  },
-  {
-    id: 'visual-direction-study',
-    zh: 'AI 数字演员',
-    en: 'AI Digital Actor',
-    type: 'AI Asset / Visual Concept',
-    status: 'Digital Actor Asset System',
-  },
 ];
 
 const vfxOverview = [
@@ -514,19 +500,19 @@ function App() {
             <p>AI训练师 / AI Trainer</p>
           </article>
           <article className="experienceCard empty reveal revealUp" style={{ '--delay': '160ms' }}>
-            <span>Project Practice</span>
-            <h3>页小灵</h3>
-            <p>AI PPT Generator / Workflow Practice</p>
+            <span>Coming Soon</span>
+            <h3>项目经历待补充</h3>
+            <p>Experience to be added</p>
           </article>
           <article className="experienceCard empty reveal revealUp" style={{ '--delay': '240ms' }}>
-            <span>Project Practice</span>
-            <h3>AI 数字演员</h3>
-            <p>Digital Actor Asset System / Visual Practice</p>
+            <span>Coming Soon</span>
+            <h3>项目经历待补充</h3>
+            <p>Experience to be added</p>
           </article>
           <article className="experienceCard empty reveal revealUp" style={{ '--delay': '320ms' }}>
-            <span>Technical Practice</span>
-            <h3>UE5 红色枫叶刀光</h3>
-            <p>UE5 VFX Study / Technical Practice</p>
+            <span>Coming Soon</span>
+            <h3>项目经历待补充</h3>
+            <p>Experience to be added</p>
           </article>
         </div>
       </section>
