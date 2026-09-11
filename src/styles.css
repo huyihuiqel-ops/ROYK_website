@@ -12,11 +12,12 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
-  min-width: 1180px;
+  min-width: 0;
   background:
     radial-gradient(circle at 62% 20%, rgba(197, 177, 122, 0.11), transparent 24%),
     linear-gradient(135deg, #030405 0%, #0c0f12 52%, #050608 100%);
@@ -646,6 +647,7 @@ img {
   width: min(1700px, calc(100% - 80px));
   margin: 0 auto;
   padding: 130px 0;
+  contain: paint;
 }
 
 .about {
@@ -666,7 +668,7 @@ img {
   z-index: -1;
   left: 50%;
   top: 0;
-  width: 100vw;
+  width: 100%;
   height: 320px;
   transform: translateX(-50%);
   background:
@@ -679,7 +681,7 @@ img {
   position: absolute;
   inset: -220px 0 0;
   left: 50%;
-  width: 100vw;
+  width: 100%;
   height: calc(100% + 220px);
   transform: translateX(-50%);
   pointer-events: none;
@@ -1084,6 +1086,7 @@ img {
   overflow: hidden;
   padding-bottom: 120px;
   isolation: isolate;
+  contain: paint;
   background:
     linear-gradient(180deg, rgba(3, 4, 5, 0.86) 0%, #030405 76%),
     linear-gradient(135deg, #05070b 0%, #10161b 48%, #030405 100%);
@@ -1318,6 +1321,7 @@ img {
     linear-gradient(180deg, rgba(3, 4, 5, 0.9) 0%, #030405 52%, #05060a 100%),
     linear-gradient(135deg, #05070b, #10121a 48%, #030405);
   isolation: isolate;
+  contain: paint;
 }
 
 .vfxCasePage .reveal {
@@ -1544,6 +1548,322 @@ img {
   opacity: 1;
   filter: none;
   image-rendering: auto;
+}
+
+/* Responsive layout adjustments. The desktop baseline remains unchanged at 1180px and above. */
+@media (max-width: 1179px) {
+  .revealLeft,
+  .revealRight {
+    transform: translateX(0);
+  }
+
+  body {
+    min-width: 0;
+  }
+
+  .nav,
+  .heroInner,
+  .pageSection,
+  .detailHero,
+  .detailProjectStack,
+  .vfxHero,
+  .vfxCaseWrap {
+    width: min(100% - 40px, 1100px);
+  }
+
+  .about,
+  .contactClose {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .aboutVideo,
+  .aboutShade,
+  .contactVideo,
+  .contactShade {
+    width: 100%;
+  }
+
+  .navLinks {
+    gap: 16px;
+  }
+
+  .workIntro {
+    grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+    gap: 32px;
+  }
+
+  .infoStrip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .showcaseItem,
+  .showcaseItem:nth-child(even) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .detailProjectFrame {
+    grid-template-columns: minmax(0, 1fr) 220px;
+    padding: 36px;
+  }
+
+  .vfxIntroGrid,
+  .finalCaseSection {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .workflowSteps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .challengeList {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .mindMapFrame img {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav {
+    top: 10px;
+    width: calc(100% - 20px);
+    height: auto;
+    min-height: 54px;
+    padding: 5px 10px;
+    gap: 8px;
+  }
+
+  .brand {
+    flex: 0 0 auto;
+  }
+
+  .brandMark {
+    width: 30px;
+    height: 30px;
+  }
+
+  .brandLetters {
+    font-size: 19px;
+  }
+
+  .navLinks {
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    gap: 4px;
+  }
+
+  .navLinks a {
+    padding: 6px 4px;
+    font-size: 11px;
+  }
+
+  .navLinks .en {
+    font-size: 0.62em;
+  }
+
+  .contactBtn {
+    display: none;
+  }
+
+  .heroInner,
+  .pageSection,
+  .detailHero,
+  .detailProjectStack,
+  .vfxHero,
+  .vfxCaseWrap {
+    width: calc(100% - 32px);
+  }
+
+  .heroInner {
+    padding-top: 88px;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 14vw, 72px);
+    line-height: 0.98;
+  }
+
+  .heroText,
+  .detailHero p:not(.eyebrow),
+  .vfxHero p {
+    width: auto;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .heroActions,
+  .vfxHeroActions,
+  .closeLinks {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .pageSection {
+    padding: 88px 0;
+  }
+
+  .about {
+    margin-top: -56px;
+    padding-top: 130px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .contactClose {
+    min-height: 760px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .workHeader h2,
+  .projectHeader h2 {
+    font-size: clamp(42px, 12vw, 70px);
+    line-height: 0.9;
+    padding: 10px 12px;
+  }
+
+  .workHeader p {
+    font-size: 21px;
+  }
+
+  .workIntro,
+  .showcaseItem,
+  .showcaseItem:nth-child(even),
+  .vfxIntroGrid,
+  .finalCaseSection,
+  .caseTwoCol {
+    grid-template-columns: 1fr;
+  }
+
+  .characterFrame {
+    height: 430px;
+  }
+
+  .workContent h3 {
+    font-size: clamp(42px, 11vw, 60px);
+  }
+
+  .infoStrip,
+  .workStats,
+  .experienceCards,
+  .strengthGrid,
+  .resultList,
+  .vfxOverviewCards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .workStats {
+    gap: 24px;
+  }
+
+  .showcaseItem,
+  .showcaseItem:nth-child(even) {
+    padding: 16px;
+  }
+
+  .showcaseItem:nth-child(even) .showcaseMedia {
+    order: 0;
+  }
+
+  .showcaseMedia {
+    min-height: 230px;
+  }
+
+  .showcaseInfo h3 {
+    font-size: clamp(36px, 10vw, 54px);
+  }
+
+  .strengthCard {
+    min-height: 0;
+  }
+
+  .detailHero,
+  .vfxHero {
+    min-height: 78vh;
+    padding-top: 96px;
+  }
+
+  .detailHero h1 {
+    font-size: clamp(52px, 14vw, 82px);
+  }
+
+  .vfxHero h1 {
+    font-size: clamp(58px, 17vw, 100px);
+    overflow-wrap: anywhere;
+  }
+
+  .vfxHero h2 {
+    font-size: clamp(25px, 7vw, 38px);
+  }
+
+  .detailProjectFrame {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 28px 22px;
+  }
+
+  .detailFrameMeta {
+    justify-self: start;
+  }
+
+  .detailFrameMain h2 {
+    font-size: clamp(38px, 11vw, 60px);
+    overflow-wrap: anywhere;
+  }
+
+  .featuredFrame .detailFrameMain h2 {
+    font-size: clamp(46px, 14vw, 76px);
+  }
+
+  .architectureFlow,
+  .workflowSteps,
+  .challengeList {
+    grid-template-columns: 1fr;
+  }
+
+  .vfxIntroGrid,
+  .caseSection {
+    padding: 38px 0;
+  }
+
+  .vfxIntroGrid h3,
+  .caseSectionHead h3,
+  .finalCaseSection h3 {
+    font-size: clamp(30px, 8vw, 46px);
+  }
+
+  .mindMapFrame {
+    padding: 8px;
+  }
+
+  .mindMapFrame img {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .contactClose h2 {
+    font-size: clamp(40px, 11vw, 64px);
+    padding: 12px 14px;
+  }
+
+  .closeLinks a,
+  .closeLinks span {
+    max-width: 100%;
+    padding: 14px 16px;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (min-width: 1180px) {
+  .aboutVideo,
+  .aboutShade {
+    width: 100vw;
+  }
 }
 
 .architectureFlow,
@@ -1910,5 +2230,54 @@ img {
 
   .showcaseInfo h3 {
     font-size: 48px;
+  }
+}
+
+@media (max-width: 1179px) {
+  body {
+    min-width: 0;
+  }
+
+  .workIntro,
+  .showcaseItem,
+  .showcaseItem:nth-child(even) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .workIntro > *,
+  .showcaseItem > * {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .revealLeft,
+  .revealRight {
+    transform: translateX(0);
+  }
+
+  .heroCopy,
+  .heroCopy h1,
+  .heroCopy .heroText {
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .workIntro,
+  .showcaseItem,
+  .showcaseItem:nth-child(even),
+  .caseTwoCol,
+  .vfxIntroGrid,
+  .finalCaseSection {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .workIntro {
+    gap: 24px;
+  }
+
+  .showcaseItem:nth-child(even) .showcaseMedia {
+    order: 0;
   }
 }

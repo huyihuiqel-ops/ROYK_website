@@ -44,6 +44,7 @@ const strengths = [
 
 const aigcProjectFrames = [
   {
+    id: 'vfx-copilot',
     zh: 'VFX COPILOT',
     en: '面向 Unreal Engine 5 特效制作流程的 AI 技术规划系统',
     type: 'AIGC Concept / Visual Experiment',
@@ -52,16 +53,18 @@ const aigcProjectFrames = [
     href: '#vfx-copilot',
   },
   {
-    zh: '项目名称待补充',
-    en: 'Project Title To Be Added 02',
-    type: 'AI Workflow / Image Iteration',
-    status: 'Waiting for project files',
+    id: 'ai-workflow-study',
+    zh: '页小灵',
+    en: 'AI PPT Generator',
+    type: 'AI Product / Workflow Design',
+    status: 'AI Presentation Workflow',
   },
   {
-    zh: '项目名称待补充',
-    en: 'Project Title To Be Added 03',
-    type: 'Visual Direction / Concept Study',
-    status: 'Waiting for project files',
+    id: 'visual-direction-study',
+    zh: 'AI 数字演员',
+    en: 'AI Digital Actor',
+    type: 'AI Asset / Visual Concept',
+    status: 'Digital Actor Asset System',
   },
 ];
 
@@ -174,7 +177,7 @@ function AigcConceptPage() {
           <a
             className={`detailProjectFrame reveal ${project.featured ? 'featuredFrame' : ''} ${index % 2 === 0 ? 'revealLeft' : 'revealRight'}`}
             href={project.href || '#aigc-concept'}
-            key={project.zh}
+            key={project.id}
             style={{ '--delay': `${index * 120}ms` }}
           >
             <div className="detailFrameMain">
@@ -441,12 +444,12 @@ function App() {
   return (
     <main className={loading ? 'appLoading' : 'appReady'}>
       <Loader loading={loading} />
+      <Nav />
       <section className="hero" id="home">
         <video className="heroVideo" autoPlay muted loop playsInline>
           <source src="/assets/hero-robot.mp4" type="video/mp4" />
         </video>
         <div className="heroShade" />
-        <Nav />
 
         <div className="heroInner robotHeroInner">
           <div className="heroCopy">
@@ -511,19 +514,19 @@ function App() {
             <p>AI训练师 / AI Trainer</p>
           </article>
           <article className="experienceCard empty reveal revealUp" style={{ '--delay': '160ms' }}>
-            <span>Coming Soon</span>
-            <h3>项目经历待补充</h3>
-            <p>Experience to be added</p>
+            <span>Project Practice</span>
+            <h3>页小灵</h3>
+            <p>AI PPT Generator / Workflow Practice</p>
           </article>
           <article className="experienceCard empty reveal revealUp" style={{ '--delay': '240ms' }}>
-            <span>Coming Soon</span>
-            <h3>项目经历待补充</h3>
-            <p>Experience to be added</p>
+            <span>Project Practice</span>
+            <h3>AI 数字演员</h3>
+            <p>Digital Actor Asset System / Visual Practice</p>
           </article>
           <article className="experienceCard empty reveal revealUp" style={{ '--delay': '320ms' }}>
-            <span>Coming Soon</span>
-            <h3>项目经历待补充</h3>
-            <p>Experience to be added</p>
+            <span>Technical Practice</span>
+            <h3>UE5 红色枫叶刀光</h3>
+            <p>UE5 VFX Study / Technical Practice</p>
           </article>
         </div>
       </section>
